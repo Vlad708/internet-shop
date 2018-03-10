@@ -1,7 +1,7 @@
-import phones from './Phones.js';
+// import phones from './PhonesStore.js';
 
-const stores = {
-	phones
-}
+// const stores = {
+// 	phones
+// }
 
-export default stores;
+// export default stores;

@@ -1,14 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import stores from './stores';
+
+import { Provider } from 'mobx-react';
+import stores from './stores/PhonesStore';
+
+
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-	<App />, 
-	document.getElementById('root')
+
+console.log(stores, 'AAA');
+
+const Root = (
+	<Provider stores={stores.data}>
+		<App />
+	</Provider>
 );
+
+
+ReactDOM.render(Root, document.getElementById('root'));
 
 
 registerServiceWorker();
