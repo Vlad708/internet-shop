@@ -8,11 +8,8 @@ import stores from './stores/PhonesStore';
 
 import registerServiceWorker from './registerServiceWorker';
 
-
-console.log(stores, 'AAA');
-
 const Root = (
-	<Provider stores={stores.data}>
+	<Provider stores={stores}>
 		<App />
 	</Provider>
 );

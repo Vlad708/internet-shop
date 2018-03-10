@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { observable, computed, action } from 'mobx';
 
 class PhonesStore {
 	@observable data = [
@@ -94,8 +94,8 @@ class PhonesStore {
 	    }
 	];
 
-	@computed get phonesCount() {
-		console.log(this.data, 'Data');
+	// Get count of available phones
+	@computed get phonesCount() {		
 		return this.data.length;
 	}
 
