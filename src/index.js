@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import { Provider } from 'mobx-react';
-import stores from './stores/PhonesStore';
+import phonesStore from './stores/PhonesStore';
+import categoriesStore from './stores/CategoriesStore';
 
 
 import registerServiceWorker from './registerServiceWorker';
 
 const Root = (
-	<Provider stores={stores}>
+	<Provider phonesStore={phonesStore.all} categoriesStore={categoriesStore.categories}>
 		<App />
 	</Provider>
 );

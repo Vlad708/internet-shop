@@ -1,7 +1,7 @@
-import { observable, computed, action } from 'mobx';
+import { observable, computed } from 'mobx';
 
 class PhonesStore {
-	@observable data = [
+	@observable all = [
 		{
 	      id: 1,
 	      categoryId: 1,
@@ -96,11 +96,11 @@ class PhonesStore {
 
 	// Get count of available phones
 	@computed get phonesCount() {		
-		return this.data.length;
+		return this.all.length;
 	}
 
 }
 
-const store = new PhonesStore();
+const phonesStore = new PhonesStore();
 
-export default store;
+export default phonesStore;

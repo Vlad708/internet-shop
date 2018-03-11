@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-@inject('stores')
+import Categories from './components/Categories'
+
+@inject('phonesStore')
 @observer 
 class App extends Component {
 
   render() {
 
-  	const {stores} = this.props;
+  	const {phonesStore} = this.props;
 
     return (
       <div className="App">
-      	<p>There are {stores.phonesCount} phones</p>
+      	<Categories />      	
       </div>
     );
   }
