@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
 import Categories from './components/Categories'
+import AppBar from 'material-ui/AppBar';
 
 @inject('phonesStore')
 @observer 
@@ -13,7 +14,8 @@ class App extends Component {
 
     return (
       <div className="App">
-      	<Categories />      	
+      	<AppBar title="My AppBar" />
+      	<Categories />    	
       </div>
     );
   }
