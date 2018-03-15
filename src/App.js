@@ -10,11 +10,8 @@ class App extends Component {
 
   render() {
 
-  	const {phonesStore} = this.props;
-
     return (
-      <div className="App">
-      	<AppBar title="My AppBar" />
+      <div className="App">      	
       	<Categories />    	
       </div>
     );

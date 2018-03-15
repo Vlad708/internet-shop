@@ -13,7 +13,7 @@ import categoriesStore from './stores/CategoriesStore';
 import registerServiceWorker from './registerServiceWorker';
 
 const Root = (
-	<Provider phonesStore={phonesStore.all} categoriesStore={categoriesStore.categories}>
+	<Provider phonesStore={phonesStore.all} categoriesStore={categoriesStore}>
 		<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>		
 			<App />		
 		</MuiThemeProvider>
