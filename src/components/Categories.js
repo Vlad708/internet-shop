@@ -17,7 +17,7 @@ class Categories extends Component {
 		});
 
 		return (
-			<div className="pure-u-1-4">
+			<div className="categories-menu-wrapper pure-u-1-4">
 				<Paper>
 					<Menu>
 						{listItems}
