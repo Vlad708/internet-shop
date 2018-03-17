@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { inject, observer } from 'mobx-react';
 
-import Categories from './components/Categories'
-import AppBar from 'material-ui/AppBar';
+import Categories from './components/Categories';
+import Products from './components/products/Products';
 
-@inject('phonesStore')
-@observer 
 class App extends Component {
 
   render() {
 
     return (
-      <div className="App pure-g">      	
-      	<Categories />      	
+      <div className="App pure-g">
+      	<Categories />
+      	<Products />      	
       </div>
     );
   }
