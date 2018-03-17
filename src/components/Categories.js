@@ -13,11 +13,11 @@ class Categories extends Component {
 
 		const {categoriesStore} = this.props;
 		const listItems = categoriesStore.categories.map((item) => {			
-			return <MenuItem primaryText={item.name} />
-		});	
+			return <MenuItem primaryText={item.name} key={item.id} />
+		});
 
 		return (
-			<div>
+			<div className="pure-u-1-4">
 				<Paper>
 					<Menu>
 						{listItems}
