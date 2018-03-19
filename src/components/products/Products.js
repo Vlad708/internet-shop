@@ -15,7 +15,7 @@ class Products extends Component {
 		});
 
 		return (
-			<div className="products-fluid pure-u-3-4">
+			<div className="products-fluid">
 				<div className="products">
 					{items}
 				</div>				

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import Categories from './components/Categories';
-import Products from './components/products/Products';
+import Layout from './components/layout/Layout';
 
 class App extends Component {
 
@@ -9,8 +8,7 @@ class App extends Component {
 
     return (
       <div className="App pure-g">
-      	<Categories />
-      	<Products />      	
+      	<Layout />      	  
       </div>
     );
   }
