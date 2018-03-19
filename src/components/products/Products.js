@@ -15,8 +15,8 @@ class Products extends Component {
 		});
 
 		return (
-			<div className="products-wrapper pure-u-3-4">
-				<div className="product-wrapper">
+			<div className="products-fluid pure-u-3-4">
+				<div className="products">
 					{items}
 				</div>				
 			</div>
