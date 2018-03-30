@@ -9,11 +9,15 @@ import MenuItem from 'material-ui/MenuItem';
 @observer 
 class Categories extends Component {
 
+	test = (props, id) => {
+		console.log(id, 'Test');
+	}
+
 	render() {
 
 		const {categoriesStore} = this.props;
 		const listItems = categoriesStore.categories.map((item) => {			
-			return <MenuItem primaryText={item.name} key={item.id} />
+			return <MenuItem primaryText={item.name} key={item.id} onClick={this.test.bind(this, item.id)}/>
 		});
 
 		return (
