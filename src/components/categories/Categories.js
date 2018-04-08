@@ -1,33 +1,40 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { inject, observer } from 'mobx-react';
+import { Link, Route } from 'react-router-dom'
 
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
+import Products from '../../components/products/Products';
 
 @inject('categoriesStore')
-@observer 
+@observer
 class Categories extends Component {
 
-	test = (props, id) => {
-		console.log(id, 'Test');
-	}
-
 	render() {
-
 		const {categoriesStore} = this.props;
-		const listItems = categoriesStore.categories.map((item) => {			
-			return <MenuItem primaryText={item.name} key={item.id} onClick={this.test.bind(this, item.id)}/>
+		const listItems = categoriesStore.categories.map(({id, name}) => {
+			return (
+				<div>
+						<MenuItem
+							linkButton
+							containerElement={<Link to={`/categories/${id}`} />}
+							primaryText={name}
+							key={id}
+						/>
+				</div>)
 		});
 
 		return (
-			<div className="categories-menu-wrapper">
-				<Paper>
-					<Menu>
-						{listItems}
-					</Menu>
-				</Paper>
-			</div>
+			<Fragment>
+				<div className="categories-menu-wrapper">
+					<Paper>
+						<Menu>
+							{listItems}
+						</Menu>
+					</Paper>
+				</div>
+			</Fragment>
 		);
 	}
 }

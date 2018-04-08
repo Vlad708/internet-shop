@@ -5,35 +5,30 @@ import Product from './Product';
 
 @inject('phonesStore')
 @observer
-
-/*const test = () => {
-		return <p>Test message</p>
-	}*/
-
 class Products extends Component {
-	
+
 	constructor(props) {
-		super(props);			
+		super(props);
 		this.filterData = this.filterData.bind(this);
 	}
 
-	filterData(data, categoryId) {	
-		categoryId = categoryId || '';
+	filterData(data, categoryId) {
+		categoryId = parseInt(categoryId || 0, 10)
 
-		data =  data.filter((element) => {			
-			return (categoryId) ? element.categoryId === categoryId : element;			
-		});
+		data =  data.filter((element) => {
+			return (categoryId !== 0) ? element.categoryId === categoryId : element;
+		});		
 
-		return <Product productItems={data} />;	
+		return <Product productItems={data} />;
 	}
 
 	render() {
 		const { phonesStore } = this.props;
-		
+
 		return (
 			<div className="products-fluid">
 				<div className="products">
-					{this.filterData(phonesStore)}
+					{this.filterData(phonesStore, this.props.categoryId)}
 				</div>
 			</div>
 		);

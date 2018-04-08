@@ -2,6 +2,7 @@ import { observable } from 'mobx';
 
 class CategoriesStore {
 	@observable categories = [
+					{id: 0, name: 'All'},
 					{id: 1, name: 'Apple'},
 					{id: 2, name: 'Samsung'},
 					{id: 3, name: 'Htc'},
