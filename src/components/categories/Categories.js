@@ -18,7 +18,7 @@ class Categories extends Component {
 				<div>
 						<MenuItem
 							linkButton
-							containerElement={<Link to={`/categories/${id}`} />}
+							containerElement={<Link to={`/categories/${name}`} />}
 							primaryText={name}
 							key={id}
 						/>

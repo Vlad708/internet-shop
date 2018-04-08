@@ -4,22 +4,22 @@ class PhonesStore {
 	@observable all = [
 		{
 	      id: 1,
-	      categoryId: 1,
+	      categoryName: 'Apple',
 	      name: "Apple iPhone 5c",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
-	      price: 823,	      
+	      price: 823,
 	      cpu: "1.3GHz",
 	      camera: "8mp (3264x2448)",
 	      size: "124.4mm x 59.2mm x 8.97mm (4.9 x 2.33 x 0.35)",
 	      weight: "132 grams (4.7 ounces) with battery",
 	      display: "4.0 326 pixel density",
-	      battery: "1480 mAh",	      
+	      battery: "1480 mAh",
 	      memory: [16, 32],
 	      os: 'iOS 8'
 	    },
 	    {
 	      id: 2,
-	      categoryId: 1,
+	      categoryName: 'Apple',
 	      name: "Apple iPhone 6",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
 	      price: 953,
@@ -30,12 +30,12 @@ class PhonesStore {
 	      weight: "132 grams (4.7 ounces) with battery",
 	      display: "4.0 326 pixel density",
 	      battery: "1480 mAh",
-	      memory: [16, 32],	      
+	      memory: [16, 32],
 	      os: 'iOS 9'
 	    },
 	    {
 	      id: 3,
-	      categoryId: 4,
+	      categoryName: 'Lenovo',
 	      name: "Lenovo A6000",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
 	      price: 764,
@@ -47,11 +47,11 @@ class PhonesStore {
 	      display: "4.0 326 pixel density",
 	      battery: "1480 mAh",
 	      memory: [16, 32, 64],
-	      os: 'Android 7.1.1 (Nougat)'	      
+	      os: 'Android 7.1.1 (Nougat)'
 	    },
 	    {
 	      id: 4,
-	      categoryId: 5,
+	      categoryName: 'Microsoft',
 	      name: "'Nokia Lumia 1520'",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
 	      price: 674,
@@ -67,7 +67,7 @@ class PhonesStore {
 	    },
 	    {
 	      id: 5,
-	      categoryId: 3,
+	      categoryName: 'Htc',
 	      name: "HTC One",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
 	      price: 674,
@@ -83,7 +83,7 @@ class PhonesStore {
 	    },
 	    {
 	      id: 6,
-	      categoryId: 2,
+	      categoryName: 'Samsung',
 	      name: "Samsung Galaxy S6",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
 	      price: 674,
@@ -100,7 +100,7 @@ class PhonesStore {
 	];
 
 	// Get count of available phones
-	@computed get phonesCount() {		
+	@computed get phonesCount() {
 		return this.all.length;
 	}
 

@@ -10,7 +10,7 @@ class Main extends Component {
       <div className="main-fluid pure-u-3-4">
         <Switch>
           <Route exact path="/" component={Products} />
-          <Route path="/categories/:id" render={({match}) => <Products categoryId={match.params.id} />} />
+          <Route path="/categories/:name" render={({match}) => <Products categoryName={match.params.name} />} />
         </Switch>
       </div>
     );

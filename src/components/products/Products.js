@@ -12,12 +12,15 @@ class Products extends Component {
 		this.filterData = this.filterData.bind(this);
 	}
 
-	filterData(data, categoryId) {
-		categoryId = parseInt(categoryId || 0, 10)
+	filterData(data, categoryName) {
+		categoryName = categoryName || 'All';
 
 		data =  data.filter((element) => {
-			return (categoryId !== 0) ? element.categoryId === categoryId : element;
-		});		
+			console.log(element);
+			return (categoryName != 'All') ? element.categoryName === categoryName : element;
+		});
+
+		console.log(data);
 
 		return <Product productItems={data} />;
 	}
@@ -28,7 +31,7 @@ class Products extends Component {
 		return (
 			<div className="products-fluid">
 				<div className="products">
-					{this.filterData(phonesStore, this.props.categoryId)}
+					{this.filterData(phonesStore, this.props.categoryName)}
 				</div>
 			</div>
 		);
