@@ -52,7 +52,7 @@ class PhonesStore {
 	    {
 	      id: 4,
 	      categoryName: 'Microsoft',
-	      name: "'Nokia Lumia 1520'",
+	      name: "Nokia Lumia 1520",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
 	      price: 674,
 	      image: "./images/phones/Lumia1520-Front-Back-png.png",

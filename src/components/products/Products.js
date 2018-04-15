@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 import { inject, observer } from 'mobx-react';
 
 import Product from './Product';
+import NotFound from '../../components/notfound/NotFound';
 
 @inject('phonesStore')
 @observer
@@ -16,22 +18,24 @@ class Products extends Component {
 		categoryName = categoryName || 'All';
 
 		data =  data.filter((element) => {
-			console.log(element);
 			return (categoryName != 'All') ? element.categoryName === categoryName : element;
 		});
 
-		console.log(data);
+		if (data.length === 0) {
+			return <NotFound />
+		}
 
 		return <Product productItems={data} />;
 	}
 
 	render() {
-		const { phonesStore } = this.props;
+		const { phonesStore, categoryName } = this.props;
 
 		return (
 			<div className="products-fluid">
 				<div className="products">
-					{this.filterData(phonesStore, this.props.categoryName)}
+					<h1>{categoryName}</h1>
+					{this.filterData(phonesStore, categoryName)}
 				</div>
 			</div>
 		);
