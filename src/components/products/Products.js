@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom'
 import { inject, observer } from 'mobx-react';
 
-import Product from './Product';
+import Product from '../../components/product/Product';
 import NotFound from '../../components/notfound/NotFound';
 
 @inject('phonesStore')
@@ -17,7 +17,7 @@ class Products extends Component {
 	filterData(data, categoryName) {
 		categoryName = categoryName || 'All';
 
-		data =  data.filter((element) => {
+		data =  data.filter((element) => {			
 			return (categoryName != 'All') ? element.categoryName === categoryName : element;
 		});
 
@@ -34,7 +34,7 @@ class Products extends Component {
 		return (
 			<div className="products-fluid">
 				<div className="products">
-					<h1>{categoryName}</h1>
+					<h1 id="category-name">{categoryName}</h1>
 					{this.filterData(phonesStore, categoryName)}
 				</div>
 			</div>
