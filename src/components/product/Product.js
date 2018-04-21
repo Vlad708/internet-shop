@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Image from '../../components/image/Image';
 import { toCamelCase } from '../../helpers/helpers';
 import './product.css';
 
@@ -12,13 +13,13 @@ class Product extends Component {
 
 			return (
       	<div className="product-item pure-u-1-4">
-					<img src={imgUrl} className="product-item__image" />
+					<Image source={imgUrl} className="product-item__image" />
 					<a href="#" className="product-item__title">{name}</a>
 					<p className="product-item__details">[{os} {battery} {camera} {size}]</p>
-					<a class="pure-button product-item__buy" href="#">
+					<button class="pure-button product-item__buy">
 				    <i class="fa fa-shopping-cart"></i>
 						Купить
-					</a>
+					</button>
 				</div>
 			)
 		});
