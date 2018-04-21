@@ -8,7 +8,7 @@ class Main extends Component {
   render() {
 
     return (
-      <div className="main-fluid pure-u-3-4">
+      <div id="main-fluid" className="pure-u-3-4">
         <Switch>
           <Route exact path="/" component={Products} />
           <Route path="/categories/:name" render={({match}) => <Products categoryName={match.params.name} />} />

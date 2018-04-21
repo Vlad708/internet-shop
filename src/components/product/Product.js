@@ -4,7 +4,6 @@ import { toCamelCase } from '../../helpers/helpers';
 import './product.css';
 
 class Product extends Component {
-
 	render() {
 		const { productItems } = this.props;
 
