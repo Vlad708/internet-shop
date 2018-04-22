@@ -15,8 +15,8 @@ class Product extends Component {
 					<Image source={imgUrl} className="product-item__image" />
 					<a href="#" className="product-item__title">{name}</a>
 					<p className="product-item__details">[{os} {battery} {camera} {size}]</p>
-					<button class="pure-button product-item__buy">
-				    <i class="fa fa-shopping-cart"></i>
+					<button className="pure-button product-item__buy">
+				    <i className="fa fa-shopping-cart"></i>
 						Купить
 					</button>
 				</div>
