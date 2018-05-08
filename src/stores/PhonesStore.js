@@ -1,7 +1,7 @@
-import { observable, computed } from 'mobx';
+import { observable, computed, action } from 'mobx';
 
 class PhonesStore {
-	@observable all = [
+	@observable phones = [
 		{
 	      id: 1,
 	      categoryName: 'Apple',
@@ -83,7 +83,7 @@ class PhonesStore {
 	      categoryName: 'Samsung',
 	      name: "Samsung Galaxy S6",
 	      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies lorem odio, at laoreet tellus sodales in. Nullam maximus eros ut tortor ultricies rutrum. Aliquam euismod lacus non est egesta",
-	      price: 674,	      
+	      price: 674,
 	      cpu: "1.3GHz",
 	      camera: "8mp (3264x2448)",
 	      size: "124.4mm x 59.2mm x 8.97mm (4.9 x 2.33 x 0.35)",
@@ -95,13 +95,39 @@ class PhonesStore {
 	    }
 	];
 
+	@observable myTrash = [];
+
 	// Get count of available phones
 	@computed get phonesCount() {
-		return this.all.length;
+		return this.phones.length;
 	}
 
+	// get total count of price
+	@computed get getTotalPrice() {
+		console.log(this.myTrash, '===Called===');
+		var priceArray = this.myTrash.map((item) => {
+			return item.price;
+		});
+		return priceArray.reduce((acc, val) => acc + val, 0);
+	}
+
+	//  Remove item from array
+	// TODO: Use this function for creating 'action' -> removeProductFromList
+	@action removeElement = (id) =>  {
+		var removeIndex = this.phones.map((item) => {
+			return item.id;
+		}).indexOf(id);
+	  ~removeIndex && this.phones.splice(removeIndex, 1);
+	}
+
+	// Add product to Trash list
+	@action addToTrash = (id) => {
+		var selectedItem = this.phones.find((item) => {
+			return item.id === id;
+		});
+		this.myTrash.push(selectedItem);
+	}
 }
 
-const phonesStore = new PhonesStore();
-
+const phonesStore = window.phonesStore = new PhonesStore();
 export default phonesStore;

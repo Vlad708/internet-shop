@@ -35,7 +35,7 @@ class Products extends Component {
 			<div className="products-fluid">
 				<div className="products">
 					<h1 id="category-name">{categoryName}</h1>
-					{this.filterData(phonesStore, categoryName)}
+					{this.filterData(phonesStore.phones, categoryName)}
 				</div>
 			</div>
 		);

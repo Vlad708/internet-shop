@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import { inject, observer } from 'mobx-react';
+
 import Image from '../../components/image/Image';
 import { toCamelCase } from '../../helpers/helpers';
 import './product.css';
 
+@inject('phonesStore')
+@observer
 class Product extends Component {
+	
+	handleClickItem = (id) =>  {
+		this.props.phonesStore.addToTrash(id);
+	}
+
 	render() {
 		const { productItems } = this.props;
 
-		return productItems.map(({name, os, battery, camera, size}) => {
+		return productItems.map(({id, name, os, battery, camera, size}) => {
 			let imgUrl = process.env.PUBLIC_URL + '/images/phones/' + toCamelCase(name) + '.png';
 
 			return (
@@ -15,7 +24,7 @@ class Product extends Component {
 					<Image source={imgUrl} className="product-item__image" />
 					<a href="#" className="product-item__title">{name}</a>
 					<p className="product-item__details">[{os} {battery} {camera} {size}]</p>
-					<button className="pure-button product-item__buy">
+					<button className="pure-button product-item__buy" onClick={() => this.handleClickItem(id)}>
 				    <i className="fa fa-shopping-cart"></i>
 						Купить
 					</button>
