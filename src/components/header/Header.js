@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Trash from '../../components/trash/Trash';
+import Cart from '../../components/cart/Cart';
 import './header.css';
 
 class Header extends Component {
@@ -11,7 +11,7 @@ class Header extends Component {
                 <h1>Mobile shop</h1>
             </div>
             <div className="trash-wrapper pure-u-1-2">
-              <Trash />
+              <Cart />
             </div>
           </div>
         </div>

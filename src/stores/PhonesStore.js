@@ -111,6 +111,10 @@ class PhonesStore {
 		return priceArray.reduce((acc, val) => acc + val, 0);
 	}
 
+	@computed get getTotalCount() {
+		return this.myTrash.length;
+	}
+
 	//  Remove item from array
 	// TODO: Use this function for creating 'action' -> removeProductFromList
 	@action removeElement = (id) =>  {

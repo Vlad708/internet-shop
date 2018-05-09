@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { inject, observer } from 'mobx-react';
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
