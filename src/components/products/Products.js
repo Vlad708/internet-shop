@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
 import { inject, observer } from 'mobx-react';
 
 import Product from '../../components/product/Product';
@@ -14,10 +13,10 @@ class Products extends Component {
 		this.filterData = this.filterData.bind(this);
 	}
 
-	filterData(data, categoryName) {
+	filterData = (data, categoryName) => {
 		categoryName = categoryName || 'All';
 
-		data =  data.filter((element) => {			
+		data =  data.filter((element) => {
 			return (categoryName != 'All') ? element.categoryName === categoryName : element;
 		});
 
